@@ -345,7 +345,14 @@ end
     })
   end
 
- 
+  if protect_gui then
+    protect_gui(Window)
+    Window.Parent = CoreGui
+elseif gethui then
+    Window.Parent = gethui()
+else
+    Window.Parent = CoreGui
+end
 
   local ResizeButton = Window.Main.Bottom.ResizeIcon.ResizeButton
   local TabContainer = Window.Main.Topbar.TabContainer
@@ -1266,3 +1273,5 @@ end
   end
 
   return library
+
+--rah 
